@@ -12,14 +12,16 @@ export default class Structure {
         const userInputSection = document.createElement('section') as HTMLDivElement
         const contentSection = document.createElement('section') as HTMLDivElement
 
-        app.append(contentSection, userInputSection)
+        app.append(userInputSection, contentSection)
 
         const container00 = document.createElement('div') as HTMLDivElement
         const container01 = document.createElement('div') as HTMLDivElement
 
+        container01.id = 'list-items'
+
         const form = document.createElement('form') as HTMLFormElement
 
-        form.addEventListener('submit',(e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault()
         })
 
@@ -34,7 +36,7 @@ export default class Structure {
         userInputSection.append(container00)
         contentSection.append(container01)
 
-        container01.append(form)
+        container00.append(form)
 
         form.append(input, button)
 
