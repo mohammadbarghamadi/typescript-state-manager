@@ -1,4 +1,3 @@
-import Structure from "./template/Scaffold";
 import State from "./modules/State";
 import Container from "./modules/Container";
 import StatesTemplate from "./template/Template";
@@ -6,6 +5,8 @@ import StatesTemplate from "./template/Template";
 const initial = () => {
     const container = Container.instance
     const template = StatesTemplate.instance
+
+    console.log(template)
 
     const input = document.querySelector('#user-input') as HTMLInputElement
     const form = document.querySelector('form') as HTMLFormElement
@@ -30,6 +31,5 @@ const initial = () => {
 }
 
 const App = document.querySelector('#app') as HTMLDivElement
-App.append(Structure.building.render())
 
-setTimeout(() => initial(), 100)
+initial()

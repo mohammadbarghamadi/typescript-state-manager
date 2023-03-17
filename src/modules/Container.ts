@@ -35,10 +35,12 @@ export default class Container implements ContainerInt {
 
     add(state: State): void {
         this._list.push(state)
+        this.save()
     }
 
     remove(id: string): void {
         this._list.filter(item => item.id !== id)
+        this.save()
     }
 
 }

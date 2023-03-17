@@ -7,7 +7,7 @@ export default class Structure {
 
     render() {
 
-        const app = document.createElement('div') as HTMLDivElement
+        const app = document.querySelector('#app') as HTMLDivElement
 
         const userInputSection = document.createElement('section') as HTMLDivElement
         const contentSection = document.createElement('section') as HTMLDivElement
@@ -39,8 +39,6 @@ export default class Structure {
         container00.append(form)
 
         form.append(input, button)
-
-        return app
 
     }
 

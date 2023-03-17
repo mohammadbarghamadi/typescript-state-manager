@@ -1,4 +1,5 @@
 import Container from "../modules/Container";
+import Structure from "./Scaffold";
 
 
 export interface StatesTemplateInt {
@@ -8,14 +9,18 @@ export interface StatesTemplateInt {
 }
 
 export default class StatesTemplate implements StatesTemplateInt {
+
     static instance: StatesTemplate = new StatesTemplate()
+
     itemList: HTMLDivElement
+    
     private constructor() {
+        Structure.building.render()
         this.itemList = document.querySelector('#list-items') as HTMLDivElement
+        console.log(this.itemList)
     }
 
     clear(): void {
-        console.log(this.itemList)
         this.itemList.innerHTML = ''
     }
 
